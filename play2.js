@@ -5,3 +5,8 @@ console.log(hobbies);
 console.log(hobbies);
 console.log(hobbies);
 console.log(hobbies);
+console.log(hobbies);
+console.log(hobbies);
+console.log(hobbies);
+console.log(hobbies);
+console.log(hobbies);
