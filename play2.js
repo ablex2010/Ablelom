@@ -5,8 +5,10 @@ const person = {
         console.log('Hi I am ' + this.name);
     }
 };
-
-console.log(person.name + person.age);
+// spread operator
+const copiedPerson = {...person};
+// console.log(person.name + person.age);
+console.log(copiedPerson);
 
 const hobbies = ['Sports', 'Cookies'];
 // one way of getting all the elementes inside an array
@@ -18,6 +20,9 @@ const hobbies = ['Sports', 'Cookies'];
 // console.log(hobbies.map(hobby => ' Hobby ' + hobby));
 //  console.log(hobbies);
 
-// another way of rewriting
-const copiedArray = hobbies.slice();
+// another way of rewriting but not quite the same output
+// const copiedArray = hobbies.slice();
+
+// spread operator
+const copiedArray = [...hobbies];
 console.log(copiedArray);
