@@ -26,3 +26,16 @@ const hobbies = ['Sports', 'Cookies'];
 // spread operator
 const copiedArray = [...hobbies];
 console.log(copiedArray);
+
+// the listing operator
+
+// const toArray1 = (arg1, arg2, arg3) =>{
+//     return [arg1, arg2, arg3];
+// };
+// console.log(toArray1(1, 2, 3));
+
+// or the rest operator
+const toArray = (...args) => {
+    return args;
+};
+console.log(toArray(1, 2, 3, 4));
