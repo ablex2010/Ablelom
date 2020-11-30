@@ -13,11 +13,14 @@ const person = {
 // };
 
 // printName(person);
-const printName = (personData) => {
-    console.log(personData.name);
+const printName = ({name}) => {
+    console.log(name);
     };
     
     printName(person);
+// or can be re-write it as for destructuring
+    const {name, age} = person;
+    console.log(name, age);
 
 
 // // spread operator
