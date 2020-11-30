@@ -13,11 +13,11 @@ const person = {
 // };
 
 // printName(person);
-const printName = ({name}) => {
-    console.log(name);
-    };
+// const printName = ({name}) => {
+//     console.log(name);
+//     };
     
-    printName(person);
+ //   printName(person);
 // or can be re-write it as for destructuring
     const {name, age} = person;
     console.log(name, age);
@@ -28,7 +28,10 @@ const printName = ({name}) => {
 // // console.log(person.name + person.age);
 // console.log(copiedPerson);
 
-// const hobbies = ['Sports', 'Cookies'];
+const hobbies = ['Sports', 'Cookies'];
+// destructuring
+const [hobby1, hobby2] = hobbies;
+console.log(hobby1, hobby2);
 // // one way of getting all the elementes inside an array
 // // for (let hobby of hobbies){
 // //     console.log(hobby);
