@@ -32,6 +32,7 @@ const hobbies = ['Sports', 'Cookies'];
 // destructuring
 const [hobby1, hobby2] = hobbies;
 console.log(hobby1, hobby2);
+
 // // one way of getting all the elementes inside an array
 // // for (let hobby of hobbies){
 // //     console.log(hobby);
