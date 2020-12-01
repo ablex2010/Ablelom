@@ -21,7 +21,9 @@ const server = http.createServer((req, res)=>{
     console.log(req.url, req.method, req.headers);
 
    const url = req.url;
+   // to writing on the file
    const method = req.method; 
+
 
    if (url == '/'){
     res.write('<html>');
@@ -31,7 +33,19 @@ const server = http.createServer((req, res)=>{
     return res.end();   
    }
 if(url == '/message' && method == 'POST'){
-fs.writeFileSync('message.txt', 'DUMMY');
+    const body=[];
+    req.on('data', (chunk)=>{
+        console.log(chunk);
+        body.push(chunk);
+    });
+    req.on('end',()=>{
+        const parseBody = Buffer.concat(body).toString();
+        //console.log(parseBody);
+        const message = parseBody.split('=')[1];
+        fs.writeFileSync('message.txt', message);
+    });
+// fs.writeFileSync('message.txt', 'DUMMY');
+
 res.statusCode = 302;
 res.setHeader('Location', '/');
 return res.end();
