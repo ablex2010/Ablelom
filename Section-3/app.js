@@ -17,12 +17,12 @@ const fs = require('fs');
 //     // process.exit();
 //      });
 
-const server = http.createServer((req, res)=>{
+    const server = http.createServer((req, res)=>{
     console.log(req.url, req.method, req.headers);
 
-   const url = req.url;
+    const url = req.url;
    // to writing on the file
-   const method = req.method; 
+     const method = req.method; 
 
 
    if (url == '/'){
@@ -32,24 +32,25 @@ const server = http.createServer((req, res)=>{
     res.write('</html>');
     return res.end();   
    }
-if(url == '/message' && method == 'POST'){
+
+    if(url == '/message' && method == 'POST'){
     const body=[];
     req.on('data', (chunk)=>{
         console.log(chunk);
         body.push(chunk);
     });
-    req.on('end',()=>{
+     req.on('end',()=>{
         const parseBody = Buffer.concat(body).toString();
         //console.log(parseBody);
         const message = parseBody.split('=')[1];
         fs.writeFileSync('message.txt', message);
     });
-// fs.writeFileSync('message.txt', 'DUMMY');
+    // fs.writeFileSync('message.txt', 'DUMMY');
 
-res.statusCode = 302;
-res.setHeader('Location', '/');
-return res.end();
-}
+    res.statusCode = 302;
+    res.setHeader('Location', '/');
+    return res.end();
+    }
 
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
