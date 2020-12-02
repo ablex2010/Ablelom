@@ -40,5 +40,18 @@ const requestHandler = (req, res) => {
         res.write('</html>');
         res.end();
 };
+// this way of exporting
+// module.exports = requestHandler;
 
-module.exports = requestHandler;
+    // module.exports = {
+    //     handler: requestHandler, 
+    //     someText: 'Some hard coded text'
+    // };
+
+    // exports.handler = requestHandler;
+    // exports.someText = 'Some hard coded rext'  ;
+    
+    // or the same as this
+    module.exports.handler = requestHandler;
+    module.exports.someText = 'Some hard coded rext'  ;
+    
